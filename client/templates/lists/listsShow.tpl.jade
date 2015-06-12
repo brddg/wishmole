@@ -1,0 +1,21 @@
+.container
+  .row
+    .col-md-12
+      h1= name
+      p= description
+
+      h2 Gifts
+
+      each gifts
+        ul
+          li= name
+
+      h3 Add Gift
+
+      +autoForm collection="Gifts" id="insertGiftForm" type="insert"
+        +afQuickField name="name"
+        +afQuickField name="description"
+        +afQuickField name="price"
+        +afQuickField name="url"
+        +afQuickField name="listId" type="hidden" value=_id
+        button.btn.btn-primary(type="submit") Insert

@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-md-12
+      h1 Your Lists
+
+      each lists
+        ul
+          li
+            a(href="/lists/#{_id}")= name
+
+      h3 Create List
+
+      +quickForm collection="Lists" id="insertListForm" type="insert" omitFields="userId"
