@@ -6,9 +6,24 @@
 
       h2 Gifts
 
-      each gifts
-        ul
-          li= name
+      table.table.table-striped
+        thead
+          tr
+            th Item
+            th
+        tbody
+          each gifts
+            tr
+              td
+                if url
+                  a(href=url target="_blank")= name
+                else
+                  = name
+              td
+                if buyerId
+                  | Already purchased
+                else
+                  a(href="#" data-purchase-item=_id) Mark as purchased
 
       h3 Add Gift
 
