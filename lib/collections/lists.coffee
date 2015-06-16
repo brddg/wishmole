@@ -14,5 +14,8 @@ Lists.schema = new SimpleSchema
       @.userId
     autoform:
       display: false
+  sharedWith:
+    type: [String]
+    optional: true
 
 Lists.attachSchema Lists.schema

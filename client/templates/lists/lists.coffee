@@ -1,4 +1,8 @@
 Template.lists.helpers
-  lists: ->
+  yourLists: ->
     Lists.find
       userId: Meteor.userId()
+
+  sharedLists: ->
+    Lists.find
+      sharedWith: Meteor.userId()

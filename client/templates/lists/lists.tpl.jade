@@ -3,11 +3,18 @@
     .col-md-12
       h1 Your Lists
 
-      each lists
+      each yourLists
+        ul
+          li
+            a(href="/lists/#{_id}")= name
+
+      h1 Shared Lists
+
+      each sharedLists
         ul
           li
             a(href="/lists/#{_id}")= name
 
       h3 Create List
 
-      +quickForm collection="Lists" id="insertListForm" type="insert" omitFields="userId"
+      +quickForm collection="Lists" id="insertListForm" type="insert" omitFields="userId,sharedWith"
