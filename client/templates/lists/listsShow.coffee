@@ -19,7 +19,11 @@ Template.listsShow.events
     event.preventDefault()
     input = $('[name="email"]')
     email = input.val()
-    if _isEmail(email)
+
+    myEmails = Meteor.user().emails.map (email) ->
+      email.address
+
+    if _isEmail(email) and email not in myEmails
       Lists.update @._id,
         $addToSet:
           sharedWith:
