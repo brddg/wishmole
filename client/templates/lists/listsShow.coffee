@@ -3,6 +3,11 @@ Template.listsShow.helpers
     Gifts.find
       listId: @._id
 
+  usersSharedWith: ->
+    Meteor.users.find
+      _id:
+        $in: @.sharedWith or []
+
 Template.listsShow.events
   "click [data-purchase-item]": (event, template) ->
     giftId = event.target.dataset["purchaseItem"]

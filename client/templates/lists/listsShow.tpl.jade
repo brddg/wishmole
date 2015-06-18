@@ -4,6 +4,12 @@
       h1= name
       p= description
 
+      h2 Shared With
+
+      ul
+        each usersSharedWith
+          li {{emails.[0].address}}
+
       form.form-inline
         div.form-group
           label(for="email") Email
